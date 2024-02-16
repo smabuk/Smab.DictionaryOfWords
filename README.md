@@ -27,7 +27,7 @@ have loaded correctly:
 1. HasWords()
 	Returns True if the dictionary has more than 1 word.
 	``` cs
-	bool hasWords = dictionary.HasWords();
+	bool hasWords = dictionary.HasWords;
 	```
 1. Count
 	Returns the number of words loaded into the dictionary.

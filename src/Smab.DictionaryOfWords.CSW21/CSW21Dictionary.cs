@@ -1,10 +1,10 @@
 ﻿namespace Smab.DictionaryOfWords.CSW21;
 
-public class EmbeddedWords : IDictionaryOfWords
+public class CSW21Dictionary : IDictionaryService
 {
-	private readonly DictionaryOfWords dictionaryOfWords;
+	private readonly DictionaryService dictionaryOfWords;
 
-	public EmbeddedWords()
+	public CSW21Dictionary()
 	{
 		EmbeddedFileProvider embeddedProvider = new(Assembly.GetExecutingAssembly());
 		IFileInfo fileInfo = embeddedProvider.GetFileInfo("words.txt");
@@ -13,7 +13,9 @@ public class EmbeddedWords : IDictionaryOfWords
 		dictionaryOfWords= new(streamReader.ReadToEnd().ReplaceLineEndings().Split(Environment.NewLine));
 	}
 
-	public int Count => dictionaryOfWords.Count;
+	public int  Count    => dictionaryOfWords.Count;
 	public bool HasWords => dictionaryOfWords.HasWords;
-	public bool IsWord(string word) => dictionaryOfWords.IsWord(word);
+
+	public void AddWord(string word) => dictionaryOfWords.AddWord(word);
+	public bool IsWord(string word)  => dictionaryOfWords.IsWord(word);
 }

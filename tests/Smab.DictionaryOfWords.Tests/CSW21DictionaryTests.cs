@@ -2,15 +2,15 @@
 
 namespace Smab.DictionaryOfWords.Tests;
 
-public class DictionaryOfWordsCSW21Tests
+public class CSW21DictionaryTests
 {
-	private static readonly IDictionaryOfWords _dictionaryOfWords = new EmbeddedWords();
+	private static readonly CSW21Dictionary _csw21Dictionary = new();
 
 	[Fact]
 	public void Is_PreLoaded()
 	{
-		_dictionaryOfWords.HasWords.ShouldBeTrue();
-		_dictionaryOfWords.Count.ShouldBeGreaterThan(20_000);
+		_csw21Dictionary.HasWords.ShouldBeTrue();
+		_csw21Dictionary.Count.ShouldBeGreaterThan(20_000);
 	}
 
 	[Theory]
@@ -23,18 +23,17 @@ public class DictionaryOfWordsCSW21Tests
 	[InlineData("English")]
 	public void Is_A_Word(string word)
 	{
-		bool actual = _dictionaryOfWords.IsWord(word);
-		Assert.True(actual);
+		_csw21Dictionary.IsWord(word).ShouldBeTrue();
 	}
 
 	[Theory]
+	[InlineData("")]
 	[InlineData("xyzzy")]
 	[InlineData("plugh")]
 	[InlineData("  spacing  ")]
 	[InlineData("1")]
 	public void Is_Not_A_Word(string word)
 	{
-		bool actual = _dictionaryOfWords.IsWord(word);
-		Assert.False(actual);
+		_csw21Dictionary.IsWord(word).ShouldBeFalse();
 	}
 }
