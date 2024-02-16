@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<PackageId>Smab.DictionaryOfWords</PackageId>
+		<Title>Smab.DictionaryOfWords</Title>
+		<Product>Smab.DictionaryOfWords</Product>
+		<AssemblyName>Smab.DictionaryOfWords</AssemblyName>
+		<RootNamespace>Smab.DictionaryOfWords</RootNamespace>
+		<Authors>Simon Brookes (@smabuk)</Authors>
+		<Copyright>Simon Brookes (@smabuk)</Copyright>
+		<Company></Company>
+		<Description>A .NET 8.0 library used to check the spelling of words.</Description>
+		<Summary>A .NET 8.0 library used to check the spelling of words.</Summary>
+		<PackageProjectUrl>https://github.com/smabuk/Smab.DictionaryOfWords</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/smabuk/Smab.DictionaryOfWords</RepositoryUrl>
+		<PublishRepositoryUrl>true</PublishRepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+		<PackageTags>dictionary, words</PackageTags>
+		<!--<PackageIconUrl>https://user-images.githubusercontent.com/782127/33497760-facf6550-d69c-11e7-94e4-b3856da259a9.png</PackageIconUrl>-->
+		<!--<PackageLicenseFile></PackageLicenseFile>-->
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+	</PropertyGroup>
+
+</Project>
