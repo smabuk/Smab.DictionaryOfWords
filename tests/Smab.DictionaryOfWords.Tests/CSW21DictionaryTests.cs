@@ -10,7 +10,7 @@ public class CSW21DictionaryTests
 	public void Is_PreLoaded()
 	{
 		_csw21Dictionary.HasWords.ShouldBeTrue();
-		_csw21Dictionary.Count.ShouldBeGreaterThan(20_000);
+		_csw21Dictionary.Count.ShouldBe(279_077);
 	}
 
 	[Theory]
