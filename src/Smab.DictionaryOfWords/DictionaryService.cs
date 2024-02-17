@@ -4,6 +4,8 @@ public class DictionaryService : IDictionaryService
 {
 	private readonly Trie _trie = new();
 
+	public DictionaryService() { }
+
 	public DictionaryService(string filename)
 	{
 		if (!File.Exists(filename))
