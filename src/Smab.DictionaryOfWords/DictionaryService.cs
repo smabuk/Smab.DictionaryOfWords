@@ -6,25 +6,40 @@ public class DictionaryService : IDictionaryService
 
 	public DictionaryService() { }
 
-	public DictionaryService(string filename)
+	public DictionaryService(string filename)           => _ = InitAsync(filename).Result;
+	public DictionaryService(IEnumerable<string> words) => _ = InitAsync(words).Result;
+
+
+	public static Task<DictionaryService> CreateAsync(string filename)           => new DictionaryService().InitAsync(filename);
+	public static Task<DictionaryService> CreateAsync(IEnumerable<string> words) => new DictionaryService().InitAsync(words);
+
+
+	private async Task<DictionaryService> InitAsync(IEnumerable<string> words)
+	{
+		await Task.Run(() =>
+		{
+			foreach (string word in words)
+			{
+				AddWord(word);
+			}
+		});
+
+		return this;
+	}
+
+	private async Task<DictionaryService> InitAsync(string filename)
 	{
 		if (!File.Exists(filename))
 		{
 			throw new FileNotFoundException(nameof(filename));
 		}
 
-		foreach (string word in File.ReadAllLines(filename))
+		foreach (string word in await File.ReadAllLinesAsync(filename))
 		{
 			AddWord(word);
 		}
-	}
 
-	public DictionaryService(IEnumerable<string> words)
-	{
-		foreach (string word in words)
-		{
-			AddWord(word);
-		}
+		return this;
 	}
 
 	public int Count { get; private set; } = 0;

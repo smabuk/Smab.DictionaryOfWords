@@ -37,4 +37,12 @@ public class DictionaryServiceTests
 		_dictionaryFromList.Count.ShouldBe(8);
 		_dictionaryFromFile.Count.ShouldBe(8);
 	}
+
+	[Fact]
+	public async void Can_Be_Created_Asynchronously()
+	{
+		IDictionaryService dictionary = await DictionaryService.CreateAsync(_wordsList);
+		dictionary.HasWords.ShouldBeTrue();
+		dictionary.Count.ShouldBe(8);
+	}
 }

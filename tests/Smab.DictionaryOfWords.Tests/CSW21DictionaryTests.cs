@@ -4,7 +4,7 @@ namespace Smab.DictionaryOfWords.Tests;
 
 public class CSW21DictionaryTests
 {
-	private static readonly CSW21Dictionary _csw21Dictionary = new();
+	private static readonly CSW21Dictionary _csw21Dictionary = CSW21Dictionary.CreateAsync().Result;
 
 	[Fact]
 	public void Is_PreLoaded()
