@@ -2,7 +2,7 @@
 
 public class CSW21Dictionary : IDictionaryService
 {
-	private DictionaryService dictionaryOfWords = null!;
+	private DictionaryService? dictionaryOfWords = null;
 	private CSW21Dictionary() { }
 
 	public static CSW21Dictionary Create() => new CSW21Dictionary().InitAsync().Result;
@@ -22,9 +22,9 @@ public class CSW21Dictionary : IDictionaryService
 		return this;
 	}
 
-	public int  Count    => dictionaryOfWords.Count;
-	public bool HasWords => dictionaryOfWords.HasWords;
+	public int  Count    => dictionaryOfWords?.Count ?? 0;
+	public bool HasWords => dictionaryOfWords?.HasWords ?? false;
 
-	public void AddWord(string word) => dictionaryOfWords.AddWord(word);
-	public bool IsWord(string word)  => dictionaryOfWords.IsWord(word);
+	public void AddWord(string word) => dictionaryOfWords?.AddWord(word);
+	public bool IsWord(string word)  => dictionaryOfWords?.IsWord(word) ?? false;
 }
