@@ -6,22 +6,17 @@ A .NET 8.0 library of English words suitable for word games.
 
 ### Initialisation
 
-Can only be retrieved using the static Create methods:
+Just instantiate the object:
 
-1. Synchronously
+1. Create
 	``` cs
-	CSW21Dictionary dictionary = CSW21Dictionary.Create();
+	CSW21Dictionary dictionary = new();
 	```
-
-1. Asynchronously
-	``` cs
-	CSW21Dictionary dictionary = await CSW21Dictionary.CreateAsync();
-	```
-
-1. Once created, extra words can be manually added using `AddWord()`
+1. Once created, extra words can be manually added using `AddWord()` or `AddWords()`
 	``` cs
 	CSW21Dictionary dictionary = CSW21Dictionary.Create();
 	dictionary.AddWord("newword");
+	dictionary.AddWords(["newwordafain", "anothernewword"]);
 	```
 
 ### Status

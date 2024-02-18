@@ -3,6 +3,7 @@
 public class DictionaryServiceTests
 {
 	private static readonly string[] _wordsList = ["this", "is", "a", "sample", "word", "list", "of", "words"];
+	private const int Expected_No_Of_Words = 8;
 	private static readonly DictionaryService _dictionaryFromList = new(_wordsList);
 	private static readonly DictionaryService _dictionaryFromFile = new("TestWordsList.txt");
 
@@ -34,15 +35,19 @@ public class DictionaryServiceTests
 		_dictionaryFromList.HasWords.ShouldBeTrue();
 		_dictionaryFromFile.HasWords.ShouldBeTrue();
 
-		_dictionaryFromList.Count.ShouldBe(8);
-		_dictionaryFromFile.Count.ShouldBe(8);
+		_dictionaryFromList.Count.ShouldBe(Expected_No_Of_Words);
+		_dictionaryFromFile.Count.ShouldBe(Expected_No_Of_Words);
 	}
 
 	[Fact]
-	public async void Can_Be_Created_Asynchronously()
+	public void Can_Add_Words()
 	{
-		IDictionaryService dictionary = await DictionaryService.CreateAsync(_wordsList);
+		DictionaryService dictionary = new(_wordsList);
 		dictionary.HasWords.ShouldBeTrue();
-		dictionary.Count.ShouldBe(8);
+		dictionary.Count.ShouldBe(Expected_No_Of_Words);
+		dictionary.AddWord("aaaaaaaaaa");
+		dictionary.Count.ShouldBe(Expected_No_Of_Words + 1);
+		dictionary.AddWords(["bbbbbbbbbb", "cccccccccc"]);
+		dictionary.Count.ShouldBe(Expected_No_Of_Words + 3);
 	}
 }

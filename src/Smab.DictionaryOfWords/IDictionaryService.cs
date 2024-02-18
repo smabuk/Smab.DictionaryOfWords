@@ -1,4 +1,5 @@
-﻿namespace Smab.DictionaryOfWords;
+﻿
+namespace Smab.DictionaryOfWords;
 
 public interface IDictionaryService
 {
@@ -6,5 +7,6 @@ public interface IDictionaryService
 	bool HasWords { get; }
 
 	void AddWord(string word);
+	void AddWords(IEnumerable<string> words);
 	bool IsWord(string word);
 }
