@@ -6,7 +6,7 @@ A .NET 8.0 library used to check the spelling of words.
 
 ### Initialisation
 
-2 ways to initialise the dictionary:
+3 ways to initialise the dictionary:
 
 1. With a file of words, 1 word per line.
 	``` cs
@@ -20,11 +20,26 @@ A .NET 8.0 library used to check the spelling of words.
 	DictionaryOfWords dictionary = new(words);
 	```
 
+1. Words can be manually add using `AddWord()`.
+	``` cs
+	DictionaryOfWords dictionary = new();
+	dictionary.AddWord("this");
+	dictionary.AddWord("is");
+	dictionary.AddWord("a");
+	dictionary.AddWord("word");
+	```
+
+1. Asynchronously using `CreateAsync()`
+	``` cs
+	IEnumerable<string> words = ["a", "list", "of", "words"];
+	DictionaryOfWords dictionary = await DictionaryOfWords.CreateAsync(words);
+	```
+
 ### Status
 Once a dictionary has been created there are 2 ways that can be used to check if the words
 have loaded correctly:
 
-1. HasWords()
+1. HasWords
 	Returns True if the dictionary has more than 1 word.
 	``` cs
 	bool hasWords = dictionary.HasWords;

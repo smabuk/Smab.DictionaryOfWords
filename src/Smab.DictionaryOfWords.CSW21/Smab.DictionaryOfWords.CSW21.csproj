@@ -17,15 +17,19 @@
 		<Company></Company>
 		<Description>A .NET 8.0 library of English words suitable for word games.</Description>
 		<Summary>A .NET 8.0 library of English words suitable for word games.</Summary>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<PackageProjectUrl>https://github.com/smabuk/Smab.DictionaryOfWords</PackageProjectUrl>
 		<RepositoryUrl>https://github.com/smabuk/Smab.DictionaryOfWords</RepositoryUrl>
 		<PublishRepositoryUrl>true</PublishRepositoryUrl>
 		<RepositoryType>git</RepositoryType>
 		<PackageTags>dictionary, words, English</PackageTags>
 		<!--<PackageIconUrl>https://user-images.githubusercontent.com/782127/33497760-facf6550-d69c-11e7-94e4-b3856da259a9.png</PackageIconUrl>-->
-		<!--<PackageLicenseFile></PackageLicenseFile>-->
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 	</PropertyGroup>
+
+	<ItemGroup>
+		<None Include="README.md" Pack="true" PackagePath="\"/>
+	</ItemGroup>
 
 	<ItemGroup>
 		<PackageReference Include="Microsoft.Extensions.FileProviders.Embedded" />

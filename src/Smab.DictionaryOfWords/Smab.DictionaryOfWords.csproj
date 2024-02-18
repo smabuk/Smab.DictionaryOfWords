@@ -17,14 +17,17 @@
 		<Company></Company>
 		<Description>A .NET 8.0 library used to check the spelling of words.</Description>
 		<Summary>A .NET 8.0 library used to check the spelling of words.</Summary>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<PackageProjectUrl>https://github.com/smabuk/Smab.DictionaryOfWords</PackageProjectUrl>
 		<RepositoryUrl>https://github.com/smabuk/Smab.DictionaryOfWords</RepositoryUrl>
 		<PublishRepositoryUrl>true</PublishRepositoryUrl>
 		<RepositoryType>git</RepositoryType>
 		<PackageTags>dictionary, words</PackageTags>
 		<!--<PackageIconUrl>https://user-images.githubusercontent.com/782127/33497760-facf6550-d69c-11e7-94e4-b3856da259a9.png</PackageIconUrl>-->
-		<!--<PackageLicenseFile></PackageLicenseFile>-->
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 	</PropertyGroup>
 
+	<ItemGroup>
+		<None Include="..\..\README.md" Pack="true" PackagePath="\"/>
+	</ItemGroup>
 </Project>

@@ -3,6 +3,7 @@
 public class CSW21Dictionary : IDictionaryService
 {
 	private DictionaryService dictionaryOfWords = null!;
+	private CSW21Dictionary() { }
 
 	public static CSW21Dictionary Create() => new CSW21Dictionary().InitAsync().Result;
 	public static Task<CSW21Dictionary> CreateAsync() => new CSW21Dictionary().InitAsync();
