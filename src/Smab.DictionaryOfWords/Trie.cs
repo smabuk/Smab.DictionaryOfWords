@@ -6,7 +6,7 @@ internal sealed class Trie {
 		Root = new TrieNode();
 	}
 
-	public void Insert(string word) {
+	public bool Insert(string word) {
 		TrieNode current = Root;
 
 		for (int i = 0; i < word.Length; i++) {
@@ -20,7 +20,13 @@ internal sealed class Trie {
 			current = value;
 		}
 
+		if (current.IsWord)
+		{
+			return false;
+		}
+
 		current.IsWord = true;
+		return true;
 	}
 
 	public bool Search(string word) {

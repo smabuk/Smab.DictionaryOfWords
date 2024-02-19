@@ -6,7 +6,7 @@ public interface IDictionaryService
 	int Count { get; }
 	bool HasWords { get; }
 
-	void AddWord(string word);
-	void AddWords(IEnumerable<string> words);
+	bool AddWord(string word);
+	int AddWords(IEnumerable<string> words);
 	bool IsWord(string word);
 }
