@@ -21,19 +21,23 @@ A .NET 8.0 library used to check the spelling of words.
 	```
 
 1. Words can be manually added using `AddWord()`.
+This returns a 'true' if the word was successfully added to the dictionary, otherwise `false`.
 	``` cs
 	DictionaryOfWords dictionary = new();
-	dictionary.AddWord("this");
-	dictionary.AddWord("is");
-	dictionary.AddWord("a");
-	dictionary.AddWord("word");
+	bool success = dictionary.AddWord("this");
+	if (dictionary.AddWord("is"))
+	{
+		_ = dictionary.AddWord("a");
+		_ = dictionary.AddWord("word");
+	}
 	```
 
 1. Multiple words can be manually added using `AddWords()`.
+This returns the number of new words added to the dictionary
 	``` cs
 	DictionaryOfWords dictionary = new();
 	IEnumerable<string> words = ["a", "list", "of", "words"];
-	dictionary.AddWords(words);
+	int wordsAdded = dictionary.AddWords(words);
 	```
 
 ### Status

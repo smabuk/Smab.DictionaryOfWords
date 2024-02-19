@@ -15,8 +15,8 @@ Just instantiate the object:
 1. Once created, extra words can be manually added using `AddWord()` or `AddWords()`
 	``` cs
 	CSW21Dictionary dictionary = new CSW21Dictionary();
-	dictionary.AddWord("newword");
-	dictionary.AddWords(["newwordafain", "anothernewword"]);
+	bool succuess = dictionary.AddWord("newword");
+	int noAdded = dictionary.AddWords(["newwordafain", "anothernewword"]);
 	```
 
 ### Status

@@ -45,9 +45,11 @@ public class DictionaryServiceTests
 		DictionaryService dictionary = new(_wordsList);
 		dictionary.HasWords.ShouldBeTrue();
 		dictionary.Count.ShouldBe(Expected_No_Of_Words);
-		dictionary.AddWord("aaaaaaaaaa");
+
+		dictionary.AddWord("this").ShouldBeFalse(); ;
+		dictionary.AddWord("aaaaaaaaaa").ShouldBeTrue();
 		dictionary.Count.ShouldBe(Expected_No_Of_Words + 1);
-		dictionary.AddWords(["bbbbbbbbbb", "cccccccccc"]);
+		dictionary.AddWords(["bbbbbbbbbb", "cccccccccc"]).ShouldBe(2);
 		dictionary.Count.ShouldBe(Expected_No_Of_Words + 3);
 	}
 }
