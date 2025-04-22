@@ -1,22 +1,16 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFramework>net8.0</TargetFramework>
-		<ImplicitUsings>enable</ImplicitUsings>
-		<Nullable>enable</Nullable>
-	</PropertyGroup>
-
-	<PropertyGroup>
-		<PackageId>Smab.DictionaryOfWords.CSW12</PackageId>
-		<Title>Smab.DictionaryOfWords.CSW12</Title>
-		<Product>Smab.DictionaryOfWords.CSW12</Product>
-		<AssemblyName>Smab.DictionaryOfWords.CSW12</AssemblyName>
-		<RootNamespace>Smab.DictionaryOfWords.CSW12</RootNamespace>
+		<PackageId>Smab.DictionaryOfWords.CSW21</PackageId>
+		<Title>Smab.DictionaryOfWords.CSW21</Title>
+		<Product>Smab.DictionaryOfWords.CSW21</Product>
+		<AssemblyName>Smab.DictionaryOfWords.CSW21</AssemblyName>
+		<RootNamespace>Smab.DictionaryOfWords.CSW21</RootNamespace>
 		<Authors>Simon Brookes (@smabuk)</Authors>
 		<Copyright>Simon Brookes (@smabuk)</Copyright>
 		<Company></Company>
-		<Description>A .NET 8.0 library of English words suitable for word games.</Description>
-		<Summary>A .NET 8.0 library of English words suitable for word games.</Summary>
+		<Description>A .NET library of English words suitable for word games.</Description>
+		<Summary>A .NET library of English words suitable for word games.</Summary>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<PackageProjectUrl>https://github.com/smabuk/Smab.DictionaryOfWords</PackageProjectUrl>
 		<RepositoryUrl>https://github.com/smabuk/Smab.DictionaryOfWords</RepositoryUrl>

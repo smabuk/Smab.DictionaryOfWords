@@ -1,6 +1,6 @@
 ﻿# Smab.DictionaryOfWords
 
-A .NET 8.0 library used to check the spelling of words.
+A .NET library used to check the spelling of words.
 
 ## Documentation
 

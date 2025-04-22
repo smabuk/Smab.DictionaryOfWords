@@ -2,7 +2,7 @@
 
 public class CSW21Dictionary : IDictionaryService
 {
-	private readonly DictionaryService? dictionaryOfWords;
+	private readonly DictionaryService dictionaryOfWords;
 
 	public CSW21Dictionary() {
 		EmbeddedFileProvider embeddedProvider = new(Assembly.GetExecutingAssembly());
@@ -12,10 +12,10 @@ public class CSW21Dictionary : IDictionaryService
 		dictionaryOfWords = new(streamReader.ReadToEnd().ReplaceLineEndings().Split(Environment.NewLine));
 	}
 
-	public int  Count    => dictionaryOfWords?.Count ?? 0;
-	public bool HasWords => dictionaryOfWords?.HasWords ?? false;
+	public int  Count    => dictionaryOfWords.Count;
+	public bool HasWords => dictionaryOfWords.HasWords;
 
-	public bool AddWord(string word) => dictionaryOfWords?.AddWord(word) ?? false;
-	public int AddWords(IEnumerable<string> words) => dictionaryOfWords?.AddWords(words) ?? 0;
-	public bool IsWord(string word)  => dictionaryOfWords?.IsWord(word) ?? false;
+	public bool AddWord(string word)                => dictionaryOfWords.AddWord(word);
+	public int  AddWords(IEnumerable<string> words) => dictionaryOfWords.AddWords(words);
+	public bool IsWord(string word)                 => dictionaryOfWords.IsWord(word);
 }

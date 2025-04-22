@@ -19,9 +19,9 @@ public class CSW21DictionaryTests
 	{
 		_csw21Dictionary.HasWords.ShouldBeTrue();
 		_csw21Dictionary.Count.ShouldBe(Expected_Number_Of_Words);
-		_csw21Dictionary.AddWord("aaaaaaaaaa");
+		_csw21Dictionary.AddWord("aaaaaaaaaa").ShouldBeTrue();
 		_csw21Dictionary.Count.ShouldBe(Expected_Number_Of_Words + 1);
-		_csw21Dictionary.AddWords(["bbbbbbbbbb", "cccccccccc"]);
+		_csw21Dictionary.AddWords(["bbbbbbbbbb", "cccccccccc"]).ShouldBe(2);
 		_csw21Dictionary.Count.ShouldBe(Expected_Number_Of_Words + 3);
 	}
 

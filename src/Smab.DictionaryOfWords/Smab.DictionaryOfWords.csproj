@@ -1,12 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFramework>net8.0</TargetFramework>
-		<ImplicitUsings>enable</ImplicitUsings>
-		<Nullable>enable</Nullable>
-	</PropertyGroup>
-
-	<PropertyGroup>
 		<PackageId>Smab.DictionaryOfWords</PackageId>
 		<Title>Smab.DictionaryOfWords</Title>
 		<Product>Smab.DictionaryOfWords</Product>
@@ -15,8 +9,8 @@
 		<Authors>Simon Brookes (@smabuk)</Authors>
 		<Copyright>Simon Brookes (@smabuk)</Copyright>
 		<Company></Company>
-		<Description>A .NET 8.0 library used to check the spelling of words.</Description>
-		<Summary>A .NET 8.0 library used to check the spelling of words.</Summary>
+		<Description>A .NET library used to check the spelling of words.</Description>
+		<Summary>A .NET library used to check the spelling of words.</Summary>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<PackageProjectUrl>https://github.com/smabuk/Smab.DictionaryOfWords</PackageProjectUrl>
 		<RepositoryUrl>https://github.com/smabuk/Smab.DictionaryOfWords</RepositoryUrl>
