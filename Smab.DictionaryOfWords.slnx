@@ -1,0 +1,16 @@
+<Solution>
+  <Folder Name="/Solution Items/">
+    <File Path=".editorconfig" />
+    <File Path=".github/workflows/nuget-deploy-main.yml" />
+    <File Path="Directory.Build.props" />
+    <File Path="Directory.Packages.props" />
+    <File Path="README.md" />
+  </Folder>
+  <Folder Name="/src/">
+    <Project Path="src/Smab.DictionaryOfWords.CSW21/Smab.DictionaryOfWords.CSW21.csproj" />
+    <Project Path="src/Smab.DictionaryOfWords/Smab.DictionaryOfWords.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/Smab.DictionaryOfWords.Tests/Smab.DictionaryOfWords.Tests.csproj" />
+  </Folder>
+</Solution>
